@@ -17,6 +17,6 @@ pip install aiohttp
 ```
 
 ## Creator
-Name: Adrian Nugroho Basuki \n
-Class: L1AC \n
+Name: Adrian Nugroho Basuki <br>
+Class: L1AC <br>
 ID: 2702298210
