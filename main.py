@@ -11,8 +11,8 @@ from poll import PollBot, PollBotResults
 from tictactoe import tttEmbed, tttMain
 
 # Main Variables
-TOKEN = 'OTQ4ODg5MjM1MDY5NDkzMjQ4.GRmP6s.2xej1BxfOBR-rtD2ROqyiaJ1WhZ52RFpnMFli0' # Discord Bot Token
-API_KEY = 'c1788c58449b4e5ea14143305232712' # API KEY for Weather API 
+TOKEN = '' # Discord Bot Token
+API_KEY = '' # API KEY for Weather API 
 bot = commands.Bot(command_prefix='-', intents = nextcord.Intents.all()) # Creating the bot with the prefix '-' and giving it access to information and events from nextcord API 
 
 # Bot event that indicates the bot is online
