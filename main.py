@@ -11,8 +11,8 @@ from poll import PollBot, PollBotResults
 from tictactoe import tttEmbed, tttMain
 
 # Main Variables
-TOKEN = '' # Discord Bot Token
-API_KEY = '' # API KEY for Weather API 
+TOKEN = 'OTQ4ODg5MjM1MDY5NDkzMjQ4.GRmP6s.2xej1BxfOBR-rtD2ROqyiaJ1WhZ52RFpnMFli0' # Discord Bot Token
+API_KEY = 'c1788c58449b4e5ea14143305232712' # API KEY for Weather API 
 bot = commands.Bot(command_prefix='-', intents = nextcord.Intents.all()) # Creating the bot with the prefix '-' and giving it access to information and events from nextcord API 
 
 # Bot event that indicates the bot is online
@@ -245,40 +245,43 @@ async def create_poll(
 
     embed = PollBot(question,optionsList, thumbnail, pollCreator).embed # Create a new embed from the class PollBot
 
+    if pollminutes > 0: 
+        await interaction.response.send_message(f"Poll has been created successfully in `{channel}`!") # Replying to user with a message
+        pollMessage = await channel.send(embed=embed) # Sending embed in the channel
+
+        # Adding number emoji reactions according to the number of options that the user inputted 
+        for i in range(1, len(optionsList) + 1):
+            await pollMessage.add_reaction(f"{i}\u20e3")
+
+        await asyncio.sleep(pollminutes*60) # Waits for the specified amount of time before doing the next actions
+            
+        pollMessage = await channel.fetch_message(pollMessage.id) # Fetches the id of the previously sent message
+
+        botReactions = [] # A list of reactions where the bot is the author
+
+        # Iteration over reactions in pollMessage
+        for reaction in pollMessage.reactions:
+
+            # Asynchronous iteration over the users who added reactions
+            async for user in reaction.users():
+                if user.bot:
+                    botReactions.append(reaction) # Appends to botReactions list if it is the case where the author is the bot
+
+        # Another iteration over reactions in pollMessage
+        for reaction in pollMessage.reactions:
+            # Checks if any reactions are not the same as the ones that the bot provided
+            if reaction not in botReactions:
+                await pollMessage.clear_reaction(reaction) # Removes the extra reactions added by users
+
+        pollMessage = await channel.fetch_message(pollMessage.id) # Fetches the id of the previously sent message
+
+        embedAfter = PollBotResults(pollMessage, question,optionsList, thumbnail, pollCreator).embed # Creating a new embed with the results
+
+        await pollMessage.clear_reactions() # Clears all reactions on the poll
+        await pollMessage.edit(embed=embedAfter) # Edits the previous message by replacing the embed with the results embed
     
-    await interaction.response.send_message(f"Poll has been created successfully in `{channel}`!") # Replying to user with a message
-    pollMessage = await channel.send(embed=embed) # Sending embed in the channel
-
-    # Adding number emoji reactions according to the number of options that the user inputted 
-    for i in range(1, len(optionsList) + 1):
-        await pollMessage.add_reaction(f"{i}\u20e3")
-
-    await asyncio.sleep(pollminutes*60) # Waits for the specified amount of time before doing the next actions
-        
-    pollMessage = await channel.fetch_message(pollMessage.id) # Fetches the id of the previously sent message
-
-    botReactions = [] # A list of reactions where the bot is the author
-
-    # Iteration over reactions in pollMessage
-    for reaction in pollMessage.reactions:
-
-        # Asynchronous iteration over the users who added reactions
-        async for user in reaction.users():
-            if user.bot:
-                botReactions.append(reaction) # Appends to botReactions list if it is the case where the author is the bot
-
-    # Another iteration over reactions in pollMessage
-    for reaction in pollMessage.reactions:
-        # Checks if any reactions are not the same as the ones that the bot provided
-        if reaction not in botReactions:
-            await pollMessage.clear_reaction(reaction) # Removes the extra reactions added by users
-
-    pollMessage = await channel.fetch_message(pollMessage.id) # Fetches the id of the previously sent message
-
-    embedAfter = PollBotResults(pollMessage, question,optionsList, thumbnail, pollCreator).embed # Creating a new embed with the results
-
-    await pollMessage.clear_reactions() # Clears all reactions on the poll
-    await pollMessage.edit(embed=embedAfter) # Edits the previous message by replacing the embed with the results embed
+    else:
+        await interaction.response.send_message("Please input a **positive integer!**")
 
 @create_poll.error
 async def create_poll_errorHandler(ctx: commands.Context, error):
@@ -556,6 +559,7 @@ async def makeBotMove(ctx: commands.Context):
 
         # Introduce occasional blunders according to the probability that was defined based on the difficulty chosen
         if random.random() < blunderProbability:
+            print("blunder!")
             pos = random.randint(1, 9)
             while board[pos - 1] != ":white_large_square:":
                 pos = random.randint(1, 9)
