@@ -15,3 +15,8 @@ pip install -U nextcord
 ```sh
 pip install aiohttp
 ```
+
+## Creator
+Name: Adrian Nugroho Basuki
+Class: L1AC
+ID: 2702298210
