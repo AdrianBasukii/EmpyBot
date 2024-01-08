@@ -1,4 +1,4 @@
-<img src="./ReadmeFiles/logo.png">
+<img src="./ReadmeFiles/logo.png" width="300">
 
 # Multi-purpose Discord Bot (EmpyBot)
 A multi purpose bot that is ready to be your versatile server companion. Keep it tidy, engage with polls, enjoy games, and stay informed about the weather effortlessly.
