@@ -231,9 +231,6 @@ async def create_poll(
 
     # Sets the value of thumbnail to the default thumbnail if user did not put a custom thumbnail
     if thumbnail == None:
-        """-----------------------------------------------------------------------------------------------------------------
-        DONT FORGET TO CHANGE THE DEFAULT THUMBNAIL LINK
-        -----------------------------------------------------------------"""
         thumbnail = '' 
 
     # Creating the list of options based on the input
