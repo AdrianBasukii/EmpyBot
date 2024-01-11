@@ -372,7 +372,7 @@ async def place(ctx: commands.Context, pos: int):
     global board
     global gameOver
 
-    # Conditions that check if the game is over and checks if the one who wrote the -end command are any of the players
+    # Conditions that check if the game is over and checks if the one who wrote the -place command are any of the players
     if not gameOver and (ctx.author.id == player1.id or ctx.author.id == player2.id):
 
         #Creating new variables
