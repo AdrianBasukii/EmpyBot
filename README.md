@@ -31,8 +31,8 @@ pip install aiohttp
   <img src="./ReadmeFiles/PollCreation.png" width="300">
   <img src="./ReadmeFiles/PollResult.png" width="300">
 * Tic-tac-toe (Single player and PvP) <br>
-  <img src="./ReadmeFiles/TictactoePVP.png" width="500">
-  <img src="./ReadmeFiles/TictactoeVsBOT.png" width="500">
+  <img src="./ReadmeFiles/TictactoePVP.png" width="350">
+  <img src="./ReadmeFiles/TictactoeVsBOT.png" width="350">
 * Weather information display <br>
   <img src="./ReadmeFiles/WeatherInfo.png" width="500">
 
