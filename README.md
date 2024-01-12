@@ -20,14 +20,14 @@ pip install -U nextcord
 pip install aiohttp
 ```
 ## Features
-* Muting and Unmuting members
-  <img src="./ReadmeFiles/MuteUnmute.png" width="300">
+* Muting and Unmuting members <br>
+  <img src="./ReadmeFiles/MuteUnmute.png" width="300"><br>
   <img src="./ReadmeFiles/MuteWarning.png" width="300">
-* Clearing messages
+* Clearing messages <br>
   <img src="./ReadmeFiles/Clear.gif" width="300">
-* Spam detection
+* Spam detection <br>
   <img src="./ReadmeFiles/SpamDetect.png" width="300">
-* Poll creation
+* Poll creation <br>
   <img src="./ReadmeFiles/PollCreation.png" width="300">
   <img src="./ReadmeFiles/PollResult.png" width="300">
 * Tic-tac-toe (Single player and PvP)
