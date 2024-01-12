@@ -21,11 +21,20 @@ pip install aiohttp
 ```
 ## Features
 * Muting and Unmuting members
+<img src="./ReadmeFiles/MuteUnmute.png" width="300">
+<img src="./ReadmeFiles/MuteWarning.png" width="300">
 * Clearing messages
+<img src="./ReadmeFiles/Clear.gif" width="300">
 * Spam detection
+<img src="./ReadmeFiles/SpamDetect.png" width="300">
 * Poll creation
+<img src="./ReadmeFiles/PollCreation.png" width="300">
+<img src="./ReadmeFiles/PollResult.png" width="300">
 * Tic-tac-toe (Single player and PvP)
+<img src="./ReadmeFiles/TictactoePVP.png" width="300">
+<img src="./ReadmeFiles/TictactoeVsBOT.png" width="300">
 * Weather information display
+<img src="./ReadmeFiles/WeatherInfo.png" width="300">
 
 ## Creator
 Name: Adrian Nugroho Basuki <br>
