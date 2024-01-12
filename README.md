@@ -24,8 +24,7 @@ pip install aiohttp
 * Clearing messages
 * Spam detection
 * Poll creation
-* Singleplayer tic-tac-toe
-* PvP tic-tac-toe
+* Tic-tac-toe (Single player and PvP)
 * Weather information display
 
 ## Creator
