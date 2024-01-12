@@ -6,7 +6,7 @@
 A multi purpose bot that is ready to be your versatile server companion. Keep it tidy, engage with polls, enjoy games, and stay informed about the weather effortlessly.
 
 ## Demonstration Video
-Link: 
+Link: https://www.youtube.com/watch?v=ytGWfk4RLM0
 
 ## Requirements
 
@@ -19,6 +19,14 @@ pip install -U nextcord
 ```sh
 pip install aiohttp
 ```
+## Features
+* Muting and Unmuting members
+* Clearing messages
+* Spam detection
+* Poll creation
+* Singleplayer tic-tac-toe
+* PvP tic-tac-toe
+* Weather information display
 
 ## Creator
 Name: Adrian Nugroho Basuki <br>
